@@ -1,36 +1,32 @@
 const mongoose = require("mongoose");
 
 let contactUsSchema = new mongoose.Schema({
-  userLastName: {
+  contactLastName: {
     type: String,
     requried: true,
     //TODO --> validator
   },
-  userFirstName: {
+  contactFirstName: {
     type: String,
     required: true,
   },
+  contactContactEmail: {
+    type: String,
+    required: false,
+  },
+  contactPhoneNumber: {
+    type: String,
+    required: false,
+  },
 
-  // un-comment this if you want the admin to be use in the same website
-  //   userAdmin: {
-  //     type: Boolean,
-  //   },
-
-  userCreatedAt: {
+  contactCreatedAt: {
     type: Date,
     required: true,
   },
 
-  userMessage: {
+  contactMessage: {
     type: String,
     required: true,
-  },
-
-  userLocation: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "userLocation",
-    required: false,
-    default: null,
   },
 });
 
