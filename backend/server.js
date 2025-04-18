@@ -8,7 +8,7 @@ app.use(express.json());
 
 const contactRouter = require("./router/contactUsRouter");
 
-const allowedOrigins = ["http://localhost:4200"];
+const allowedOrigins = ["http://localhost:4200", "http://3.107.97.50"];
 
 app.use(
   cors({
