@@ -10,12 +10,19 @@ const httpOptions = {
 export class DbService {
 
   private localUrl = "http://localhost:3030";
-  private onlineUrl = "http://3.107.97.50:3030";
+  // private onlineUrl = "http://3.107.97.50:3030";
 
   constructor(private http:HttpClient, private router: Router){}
 
-
   addContactMessage(contactMessage: any){
-    return this.http.post(`${this.onlineUrl}/add/contact/api`, contactMessage, httpOptions)
+    return this.http.post(`${this.localUrl}/add/contact/api`, contactMessage, httpOptions)
+  }
+
+  loginUser(user: any){
+    return this.http.post(`${this.localUrl}/login/user/api`, user, httpOptions)
+  }
+
+  registerUser(user: any){
+    return this.http.post(`${this.localUrl}/signup/user/api`, user, httpOptions)
   }
 }

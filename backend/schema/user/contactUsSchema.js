@@ -30,4 +30,4 @@ let contactUsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("User", contactUsSchema);
+module.exports = mongoose.model("Contact", contactUsSchema);

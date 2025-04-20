@@ -10,19 +10,25 @@ let userSchenma = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userEmail: {
+    type: String,
+    required: true,
+    unique: true,
+    //TODO --> validator
+  },
 
-  // un-comment this if you want the admin to be use in the same website
-//   userAdmin: {
-//     type: Boolean,
-//   },
-
-  userCreatedAt: {
-    type: Date,
+  userPassword: {
+    type: String,
     required: true,
   },
 
-  userMessage: {
-    type: String,
+  // un-comment this if you want the admin to be use in the same website
+  //   userAdmin: {
+  //     type: Boolean,
+  //   },
+
+  userCreatedAt: {
+    type: Date,
     required: true,
   },
 
