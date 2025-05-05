@@ -22,7 +22,8 @@ export class SignUpComponent {
     this.db.registerUser(this.user).subscribe({
       next: (res) => {
         console.log('Signup success:', res);
-        this.router.navigate(['/']);
+        this.router.navigate(['/login-page']);
+        alert('Signup successful!');
       },
       error: (err) => {
         console.error('Signup error:', err);

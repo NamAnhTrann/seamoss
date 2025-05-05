@@ -48,6 +48,7 @@ module.exports = {
       if (err) {
         return next(err);
       }
+      //tie session id to user.
 
       if (!user) {
         return res.status(401).json({ message: "Invalid credentials" });
@@ -57,7 +58,9 @@ module.exports = {
         if (err) {
           return next(err);
         }
+        req.session.user_id = user._id;
         console.log("Session created:", req.session);
+        console.log("Session ID:", req.session.user_id);
 
         return res.status(200).json({
           success: true,

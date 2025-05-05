@@ -22,6 +22,7 @@ export class LoginPageComponent {
       userPassword: this.userPassword
     };
     this.db.loginUser(user).subscribe((res:any)=>{
+      this.db.refreshCartCount();
       this.router.navigate(["/"]);
       console.log(res);
     },

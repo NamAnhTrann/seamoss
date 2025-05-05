@@ -8,6 +8,15 @@ const session = require("express-session");
 const app = express();
 
 require("./strategy/local");
+const allowedOrigins = ["http://localhost:4200", "http://3.107.97.50:3030"];
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: "GET, POST, PUT, DELETE",
+    credentials: true,
+    allowedHeaders: "Content-Type, Authorization",
+  })
+);
 
 app.use(
   session({
@@ -24,21 +33,14 @@ app.use(passport.session());
 
 app.use(express.json());
 
-const allowedOrigins = ["http://localhost:4200", "http://3.107.97.50:3030"];
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: "GET, POST, PUT, DELETE",
-    credentials: true,
-    allowedHeaders: "Content-Type, Authorization",
-  })
-);
-
 const contactRouter = require("./router/contactUsRouter");
 const userRouter = require("./router/userRouter");
-
+const productRouter = require("./router/productRouter");
+const cartRouter = require("./router/cartRouter");
 app.use(contactRouter);
 app.use(userRouter);
+app.use(productRouter);
+app.use(cartRouter);
 
 const db_url = process.env.MONGO_DB_URL;
 const port_no = process.env.PORT_NO;

@@ -21,6 +21,10 @@ let userSchenma = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userPhoneNumber: {
+    type: Number,
+    required: false,
+  },
 
   // un-comment this if you want the admin to be use in the same website
   //   userAdmin: {
