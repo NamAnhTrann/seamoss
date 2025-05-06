@@ -39,6 +39,7 @@ export class CartPageComponent {
     }
     return totalPrice;
   }
+
   backToShop(){
     this.router.navigate(["/product-page"]);
   }

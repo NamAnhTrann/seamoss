@@ -127,22 +127,22 @@
           <div class="-my-3 divide-y divide-gray-200">
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt class="text-base font-normal text-gray-500">Subtotal</dt>
-              <dd class="text-base font-medium text-gray-900">$0</dd>
+              <dd class="text-base font-medium text-gray-900">${{cartTotalPrice() | number:'1.2-2'}} </dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt class="text-base font-normal text-gray-500">Store Pickup</dt>
-              <dd class="text-base font-medium text-gray-900">$0</dd>
+              <dd class="text-base font-medium text-gray-900">Free</dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt class="text-base font-normal text-gray-500">VAT</dt>
-              <dd class="text-base font-medium text-gray-900">10%</dd>
+              <dd class="text-base font-medium text-gray-900">${{cartTotalPrice() * 0.1 | number:'1.2-2'}}</dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt class="text-base font-bold text-gray-900">Total</dt>
-              <dd class="text-base font-bold text-gray-900">$0</dd>
+              <dd class="text-base font-bold text-gray-900">${{(cartTotalPrice() * 0.1)+ cartTotalPrice() | number:'1.2-2'}}</dd>
             </dl>
           </div>
         </div>
